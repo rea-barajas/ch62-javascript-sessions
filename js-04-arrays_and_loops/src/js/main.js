@@ -163,3 +163,141 @@ console.log(`Imprimiendo: ${printingNow}`); // thesis.pdf (El primero que llegó
 // 6. Atiende (elimina) la primera tarea de la lista y muéstrala.
    console.log("Tarea URGENTE completada: " + taskList.shift());
    console.log("Lista de tareas final: " + taskList.join(", "));
+
+
+/* ================================================================
+   BLOQUE 3: BUCLES (LOOPS) 
+   ================================================================
+   Estructuras que repiten un bloque de código mientras una condición sea verdadera.
+*/
+
+// --- 1. Ciclo FOR (Controlado) ---
+// Úsalo cuando sabes cuántas veces quieres repetir algo (ej. recorrer un array).
+// Sintaxis: for (expresión_inicial; condición; expresión_final) { ... }
+
+// Imprimier los números del 1 al 5
+
+for(let i = 1; i <=5 ; i++ ) {
+    console.log(`Número ${i}`);
+}
+
+// ------------------- Uso de break en ciclos ----------------------------
+// break detiene la ejecución de la iteración en curso y termina el ciclo.
+
+for(let i = 1; i <=10 ; i++ ) {
+    if(i === 6) {
+        console.log("¡Se alcanzó el número 6");
+        break; 
+    }
+      console.log(`(con break) Número ${i}`);
+}
+
+// ===============Ejercicio mentales ====================
+
+let iteracion = 0;
+
+for (  ;   ;  ){
+    console.log( `Núm de iteración: ${iteracion}` ); // 0 , 1, 2, 3, 4
+    iteracion++;
+    if ( iteracion === 5 ){
+        break;
+    }
+}
+console.log("Final", iteracion); // 5
+
+// =====================================================
+
+let myIteration; 
+
+for (myIteration = 0; myIteration <= 5; myIteration++) {
+    console.log("For loop", myIteration ); // 0 , 1, 2
+     if( myIteration === 2) break;  
+}
+console.log("Final", myIteration); //  2
+
+// =====================================================
+ let jiteration;
+
+for ( jiteration = 0; jiteration < 3; jiteration++ ) {
+   console.log("For loop", jiteration ); //
+}
+console.log("Final", jiteration); //
+
+// =====================================================
+let k;
+for ( k = 0; k < 5; k++ )   ; 
+
+{
+   console.log("Valor de", k ); // 5
+}
+console.log("Final", k); // 5
+
+
+// ------------------- Uso de continue en ciclos ----------------------------
+// break: Termina completamente un bucle (for, while, switch, etc.).
+// continue: Salta la iteración actual y pasa a la siguiente sin salir del bucle.
+
+for (let i = 0 ; i <= 5; i++ ){
+    if ( i === 3) continue;
+    console.log("Estoy dentro del ciclo for"); 
+    console.log("Valor de i ", i ); // 0,1,2,4,5
+}
+
+
+// --- 2. Ciclo WHILE (Basado en condición) ---
+// Úsalo cuando NO sabes cuántas veces se repetirá, depende de algo externo.
+// Cuidado: Si la condición nunca es falsa, creas un bucle infinito (Infinite Loop).
+
+/*
+while(  confirm("¿Quieres tu número de la suerte")  ){
+    const numeroSuerte = Math.random(); // 0....1.0(sin incluir 1.0)
+    console.log("Tu número de la suerte es: " + numeroSuerte);
+}
+console.log("Gracias por participar");
+*/
+
+/* ================================================================
+   BLOQUE 4: DIFERENCIAS Y EJERCICIO INTEGRADO 
+   ================================================================
+   
+   FOR vs WHILE:
+   - FOR: Ideal para iterar colecciones (arrays) o rangos numéricos fijos.
+          "Repite esto 10 veces".
+          
+   - WHILE: Ideal para lógica de estado.
+            "Repite esto MIENTRAS el usuario no presione SALIR".
+*/
+
+// Imprimier los números del 1 al 5 (usando WHILE)
+for(let i = 1; i <=5 ; i++ ) {
+    console.log(`Número ${i}`);
+}
+
+let i = 1;
+while(i<=5){
+   console.log("Valor de i es:", i);
+   i++
+}
+
+// ================================================================
+
+const countries = ["México", "USA", "Canadá", "Japón"];
+// Usando FOR LOOP
+for (let index = 0; index < countries.length; index++) {
+   const element = countries[index];
+   console.log(`(for) País en índice ${index}: ${element}`);   
+}
+
+// Usando For OF (ES6+)
+for (const country of countries) {
+   console.log(`(for of) País: ${country}`);
+}
+
+// TODO: RETO FINAL (Simulación de Cajero)
+// Tienes un array de movimientos: [100.00, -50.00, 200.00, -100.00]
+// 1. Usa un ciclo FOR, o WHILE o FOR-OF para recorrer los movimientos.
+// 2. Suma los valores a una variable 'totalBalance'.
+// 3. Imprime el balance final.
+
+const transactions = [100.00, -50.00, 200.00, -100.00, 500.00];
+let totalBalance = 0;
